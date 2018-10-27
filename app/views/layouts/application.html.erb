@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" %>
+    
+  <style>
+.mr-4 a, .ml-4 a, a.navbar-brand {
+  color : grey;
+}
+  </style>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">RailsApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="mr-4"><%= link_to "Home", home_path %></li>
+      <li class="mr-4"><%= link_to "About", about_path %></li>
+      <li class="mr-4"><%= link_to "Services", services_path %></li>
+      <li class="mr-4"><%= link_to "Blog", posts_path %></li>
+      <li class="mr-4"><%= link_to "Contact", contact_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right mr-auto">
+      <li class="ml-4"><%= link_to "Create Post", new_post_path %></li>
+      </ul>
+  </div>
+</nav>
+
+<br><br>
+<main role="main" class="container">
+
+<%= yield %>
+
+</main><!-- /.container -->
+
+  </body>
+</html>
